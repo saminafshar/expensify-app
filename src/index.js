@@ -11,14 +11,7 @@ import * as serviceWorker from './serviceWorker';
 import 'normalize.css/normalize.css';
 
 const store = configureStore();
-store.dispatch (addExpense({description: 'gas bill', note:'this is the gas bill', amount:500}));
-store.dispatch (addExpense({description: 'rent', note:'this is the rent', amount:100, createdAt:-1000}));
-store.dispatch (addExpense({description: 'water bill', note:'this is the water bill', amount:43304}));
-store.dispatch (setTextFilter(''));
-console.log(store.getState());
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+
 
 // Higher Order Component (a component (hoc) that renders another component)
 
