@@ -3,23 +3,15 @@ const app = express();
 const path = require('path');
 
 const publicPath = path.join(__dirname, '..', 'build');
-
-app.use(function(req, res, next) {
-    res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com");
-    return next();
-});
-
-app.get('/*', (req, res) => {
-    res.sendFile(publicPath, 'index.html');
-});
-
-app.use(function(req, res, next) {
-    res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com");
-    return next();
-});
+const port = process.env.PORT || 3000;;
 app.use(express.static(publicPath));
 
-app.listen (3000, () => {
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
+});
+
+
+app.listen (port , () => {
     console.log("Server is up");
 });
 

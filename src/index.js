@@ -12,7 +12,7 @@ import 'normalize.css/normalize.css';
 
 const store = configureStore();
 
-
+store.dispatch(addExpense({description:"Rent",createdAt:1}));
 // Higher Order Component (a component (hoc) that renders another component)
 
 const jsx = (
